@@ -50,8 +50,8 @@ module.exports = {
         }
 
         try {
-            pendingchannel.send({ content: userMention(user.id) + ' ' + config.whitelist.messages.pending, embeds: [pendingEmbed] });
-            member.send({ content: userMention(user.id) + ' ' + config.whitelist.messages.pending, embeds: [pendingEmbed] });
+            pendingchannel.send({ content: userMention(member.id) + ' ' + config.whitelist.messages.pending, embeds: [pendingEmbed] });
+            member.send({ content: userMention(member.id) + ' ' + config.whitelist.messages.pending, embeds: [pendingEmbed] });
         } catch (error) {
             if (error.code === 50007) {
                 return interaction.editReply({ content: `The mentioned user has blocked their DMs. Don't worry, the role has been added.` });
